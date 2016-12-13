@@ -1,0 +1,28 @@
+<h1>What <span>YOU</span> up to?</h1>
+<div class="display">
+    <div class="mapContainer">
+        <sebm-google-map
+            [latitude]="currentActivity.activityCoordinateLatitude - 10" 
+            [longitude]="currentActivity.activityCoordinateLongitude  + 60"
+            [zoom]="3"
+            [mapDraggable]="false"
+            [disableDoubleClickZoom]="true"
+            [scrollwheel]="false"
+            [zoomControl]="false"
+            [streetViewControl]="false">
+            <sebm-google-map-marker 
+                [latitude]="currentActivity.activityCoordinateLatitude"
+                [longitude]="currentActivity.activityCoordinateLongitude"
+                [opacity]="1"
+                [zIndex]="5"
+                >
+             </sebm-google-map-marker>
+           <!-- <sebm-google-map-info-window [latitude]="lat" [longitude]="lng"></sebm-google-map-info-window>-->
+        </sebm-google-map>
+    </div>
+    <div class="activityDetails">
+                    <div class="customerName">{{currentActivity.customerFirstName}}</div>
+                    <img [src]="currentActivity.activityPictureUrl" class="activityImg"/>
+                    <div class="activityTitle">{{currentActivity.activityTitle}}</div>
+    </div>
+</div>
